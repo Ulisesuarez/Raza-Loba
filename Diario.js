@@ -1,8 +1,9 @@
 const Registros = require('./Registros');
-let registros=[]
+
 module.exports = {
+    registros:[],
     incluirRegistro: function (registro) {
-        registros.push(registro)
+        this.registros.push(registro)
     },
     mostrarDiario: function (registros) {
         for (let registro in registros) {
@@ -20,7 +21,7 @@ module.exports = {
         this.incluirRegistro({
             eventos: ['finde', 'bicicleta', 'descansar', 'cacahuetes', 'cerveza'],
             pulpo: true})
-        this.mostrarDiario(registros)
-        console.log(registros.length)
+        this.mostrarDiario(this.registros)
+        console.log(this.registros.length)
     }
 }
